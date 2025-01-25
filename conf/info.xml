@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget version="0.2">
+	<title xml:lang="ko">Mh Slide Pro</title>
+	<description xml:lang="ko">Slide Pro Slideshow 위젯</description>
+	<version>1.0</version>
+	<date>2020-01-14</date>
+
+	<author email_address="mbg1346@naver.com" link="https://moonhouse.co.kr">
+		<name xml:lang="ko">문하우스</name>
+	</author>
+
+	<extra_vars>
+	<group>
+	<title xml:lang="ko">기본 설정</title>
+		<var id="module_srls">
+			<type>module_srl_list</type>
+			<name xml:lang="ko">대상 모듈</name>
+			<description xml:lang="ko">선택하신 모듈에 등록된 글을 대상으로 합니다.</description>
+		</var>
+		<var id="category_srl">
+			<type>text</type>
+			<name xml:lang="ko">대상 분류 srl값</name>
+			<description xml:lang="ko">표시하고 싶은 분류만 나타나도록 할 경우 해당 분류 srl값을 입력해 주세요.(비워두시면 모든 분류 대상)</description>
+		</var>
+		<var id="main_height">
+			<type>text</type>
+			<name xml:lang="ko">슬라이드Box 세로크기</name>
+			<description xml:lang="ko">위젯의 세로 크기를 정합니다. (기본 400px 숫자만)</description>
+		</var>
+		<var id="forceSize">
+			<name xml:lang="ko">★슬라이드 넓이</name>
+			<type>select</type>
+			<options>
+				<name xml:lang="ko">슬라이드Box 넓이</name>
+				<value>none</value>
+			</options>
+			<options>
+				<name xml:lang="ko">전체 넓이(100%)</name>
+				<value>fullWidth</value>
+			</options>
+		</var>
+		<var id="box_width">
+			<type>text</type>
+			<name xml:lang="ko">　┖ 슬라이드Box 넓이크기</name>
+			<description xml:lang="ko">슬라이드Box 넓이선택시 가로크기를 정합니다. (기본 900px 숫자만)</description>
+		</var>
+		<var id="flowing_images_num">
+			<type>text</type>
+			<name xml:lang="ko">슬라이드 수</name>
+			<description xml:lang="ko">선택된 모듈에서 가져오는 슬라이드 배너 수 (기본값: 6개)</description>
+		</var>
+		<var id="autoplay">
+			<name xml:lang="ko">슬라이드 자동</name>
+			<type>select</type>
+			<options>
+				<name xml:lang="ko">자동</name>
+				<value>true</value>
+			</options>
+			<options>
+				<name xml:lang="ko">수동</name>
+				<value>false</value>
+			</options>
+		</var>
+		<var id="thumbnail_type">
+			<type>select</type>
+			<name xml:lang="ko">★썸네일 생성 방법</name>
+			<description xml:lang="ko">썸네일 생성 방법을 선택할 수 있습니다.(기본 ratio) (fill : 꽉 채우기, ratio : 비율 맞추기)</description>
+			<options>
+				<value>ratio</value>
+				<name xml:lang="ko">Ratio (비율 맞추기)</name>
+			</options>
+			<options>
+				<value>fill</value>
+				<name xml:lang="ko">fill (채우기)</name>
+			</options>
+		</var>
+		<var id="thumbnail_width">
+			<type>text</type>
+			<name xml:lang="ko">썸네일 가로크기</name>
+			<description xml:lang="ko">썸네일의 가로크기를 정합니다. (기본 600px 숫자만)</description>
+		</var>
+		<var id="thumbnail_height">
+			<type>text</type>
+			<name xml:lang="ko">썸네일 세로크기</name>
+			<description xml:lang="ko">썸네일의 세로 크기를 정합니다. (기본 400px 숫자만)</description>
+		</var>
+		<var id="boxshadow">
+			<type>select</type>
+			<name xml:lang="ko">썸네일 그림자 출력</name>
+			<description xml:lang="ko">썸네일에 그림자 출력 선택</description>
+			<options>
+				<value>N</value>
+				<name xml:lang="ko">Normal</name>
+			</options>
+			<options>
+				<value>Y</value>
+				<name xml:lang="ko">Shadow</name>
+			</options>
+		</var>
+		<var id="img_rotateZ">
+			<type>text</type>
+			<name xml:lang="ko">★이미지 기울기</name>
+			<description xml:lang="ko">이미지들의 기울기를 설정합니다.(기본값:0, 35 = 적정값)</description>
+		</var>
+		<var id="img_rotateX">
+			<type>text</type>
+			<name xml:lang="ko">이미지 원근</name>
+			<description xml:lang="ko">이미지들의 원근 기울기를 설정합니다.(기본값:0, 60 = 적정값)</description>
+		</var>
+		<var id="img_rotateY">
+			<type>text</type>
+			<name xml:lang="ko">이미지 화면배치</name>
+			<description xml:lang="ko">이미지들의 화면배치를 설정합니다.(기본값:-50, -50 = 중앙)</description>
+		</var>
+		<var id="background_color">
+			<type>color</type>
+			<name xml:lang="ko">바탕 컬러</name>
+			<description xml:lang="ko">박스별 색상 미지정시 바탕 컬러입니다.(기본 #eee)</description>
+		</var>
+		<var id="b_img">
+			<name xml:lang="ko">바탕 이미지</name> 
+			<type>text</type>
+			<description xml:lang="ko">바탕화면에 나올 이미지의 주소를 적어주세요.</description> 
+		</var>
+		<var id="shuffling">
+			<type>select</type>
+			<name xml:lang="ko">랜덤</name>
+			<description xml:lang="ko">이미지를 랜덤으로 가져옵니다.</description>
+			<options>
+				<value>false</value>
+				<name xml:lang="ko">아니오</name>
+			</options>
+			<options>
+				<value>true</value>
+				<name xml:lang="ko">예</name>
+			</options>
+		</var>
+	</group>
+
+	<group>
+	<title xml:lang="ko">세부 설정</title>
+		<var id="title_visibility">
+			<type>select</type>
+			<name xml:lang="ko">★제목 글</name>
+			<description xml:lang="ko"></description>
+			<options>
+				<value>true</value>
+				<name xml:lang="ko">예</name>
+			</options>
+			<options>
+				<value>false</value>
+				<name xml:lang="ko">아니오</name>
+			</options>
+		</var>
+		<var id="title_length">
+			<type>text</type>
+			<name xml:lang="ko">　┖ 제목 글자수</name>
+			<description xml:lang="ko">제목이 길경우 설정하신 글자수로 잘라지고 ".." 가 붙습니다. (기본값:전체 )</description>
+		</var>
+		<var id="title_size">
+			<type>text</type>
+			<name xml:lang="ko">　┖ 제목 크기</name>
+			<description xml:lang="ko">제목글자의 크기를 설정합니다. (기본값: 18px, css 형식의 사이즈 모두 OK)</description>
+		</var>
+		<var id="title_color">
+			<type>color</type>
+			<name xml:lang="ko">　┖ 제목 컬러</name>
+			<description xml:lang="ko">제목 컬러입니다.(기본값: #444)</description>
+		</var>
+		<var id="display_summary">
+			<name xml:lang="ko">★내용 글</name>
+			<type>select</type>
+			<description xml:lang="ko">내용 글표시</description>
+			<options>
+				<name xml:lang="ko">표시</name>
+				<value>Y</value>
+			</options>
+			<options>
+				<name xml:lang="ko">표시하지 않음</name>
+				<value>N</value>
+			</options>
+		</var>
+		<var id="content_cut_size">
+			<name xml:lang="ko">　┖  내용 글자수</name>
+			<type>text</type>
+			<description xml:lang="ko">내용글 표시시 글자수를 지정 합니다. (기본 500)</description>
+		</var>
+		<var id="sum_font_size">
+			<type>text</type>
+			<name xml:lang="ko">　┖ 내용글 크기</name>
+			<description xml:lang="ko">내용글자의 크기를 설정합니다. (기본값: 1em, css 형식의 사이즈 모두 OK)</description>
+		</var>
+		<var id="sum_font_color">
+			<type>color</type>
+			<name xml:lang="ko">　┖ 내용 컬러</name>
+			<description xml:lang="ko">내용 컬러입니다.(기본값: #fff)</description>
+		</var>
+		<var id="content_h_n">
+			<name xml:lang="ko">　┖  내용 글 세로칸수</name>
+			<type>text</type>
+			<description xml:lang="ko">내용글 세로 칸수를 지정합니다.(기본값: 6)</description>
+		</var>
+		<var id="content_l_h">
+			<name xml:lang="ko">　┖  내용 글 칸높이</name>
+			<type>text</type>
+			<description xml:lang="ko">내용글 각 칸의 높이를 지정합니다. (기본 2em 숫자만)</description>
+		</var>
+	</group>
+
+	<group>
+	<title xml:lang="ko">슬라이드설정</title>
+		<var id="arrows">
+			<name xml:lang="ko">★좌우 화살표 출력</name>
+			<type>select</type>
+			<description xml:lang="ko">슬라이드내 마우스시 좌우 화살표 출력</description>
+			<options>
+				<name xml:lang="ko">출력</name>
+				<value>true</value>
+			</options>
+			<options>
+				<name xml:lang="ko">출력 안함</name>
+				<value>false</value>
+			</options>
+		</var>
+		<var id="rla_color">
+			<type>color</type>
+			<name xml:lang="ko">　┖  좌우 화살표 색상</name>
+			<description xml:lang="ko">기본색상 #fff</description>
+		</var>
+		<var id="th">
+			<name xml:lang="ko">★하단 제목/썸네일 영역 출력</name>
+			<type>select</type>
+			<options>
+				<name xml:lang="ko">출력</name>
+				<value>true</value>
+			</options>
+			<options>
+				<name xml:lang="ko">출력 안함</name>
+				<value>false</value>
+			</options>
+		</var>
+		<var id="ti">
+			<name xml:lang="ko">　┖  하단 썸네일 출력</name>
+			<type>select</type>
+			<options>
+				<name xml:lang="ko">출력 안함</name>
+				<value>false</value>
+			</options>
+			<options>
+				<name xml:lang="ko">출력</name>
+				<value>true</value>
+			</options>
+		</var>
+		<var id="tha_color">
+			<type>color</type>
+			<name xml:lang="ko">　┖  하단 제목 화살표 색상</name>
+			<description xml:lang="ko">기본색상 #f00</description>
+		</var>
+		<var id="buttons">
+			<name xml:lang="ko">★하단 네비 출력</name>
+			<type>select</type>
+			<options>
+				<name xml:lang="ko">출력 안함</name>
+				<value>false</value>
+			</options>
+			<options>
+				<name xml:lang="ko">출력</name>
+				<value>true</value>
+			</options>
+		</var>
+		<var id="fade">
+			<name xml:lang="ko">슬라이딩 선택</name>
+			<type>select</type>
+			<description xml:lang="ko">슬라이드 Box의 진행효과</description>
+			<options>
+				<name xml:lang="ko">슬라이딩</name>
+				<value>false</value>
+			</options>
+			<options>
+				<name xml:lang="ko">페이드효과</name>
+				<value>true</value>
+			</options>
+		</var>
+		<var id="fullscreen">
+			<name xml:lang="ko">★풀스크린 지원</name>
+			<type>select</type>
+			<description xml:lang="ko">풀스크린을 지원하는 화살표 출력</description>
+			<options>
+				<name xml:lang="ko">출력</name>
+				<value>true</value>
+			</options>
+			<options>
+				<name xml:lang="ko">출력 안함</name>
+				<value>false</value>
+			</options>
+		</var>
+		<var id="fbc">
+			<type>color</type>
+			<name xml:lang="ko">　┖  풀스크린 화살표 색상</name>
+			<description xml:lang="ko">기본색상 #eee</description>
+		</var>
+		<var id="imageScaleMode">
+			<name xml:lang="ko">배경 이미지 스케일</name>
+			<type>select</type>
+			<options>
+				<name xml:lang="ko">채우기(자르기)</name>
+				<value>cover</value>
+			</options>
+			<options>
+				<name xml:lang="ko">전체이미지(슬라이드내)</name>
+				<value>contain</value>
+			</options>
+			<options>
+				<name xml:lang="ko">이미지크기</name>
+				<value>none</value>
+			</options>
+		</var>
+		<var id="autoheight">
+			<name xml:lang="ko">자동 높이조절</name>
+			<type>select</type>
+			<description xml:lang="ko">배경이미지 기준 자동 높이조절</description>
+			<options>
+				<name xml:lang="ko">지정 높이</name>
+				<value>false</value>
+			</options>
+			<options>
+				<name xml:lang="ko">자동</name>
+				<value>true</value>
+			</options>
+		</var>
+		<var id="th_location">
+			<name xml:lang="ko">제목 버턴 위치</name>
+			<type>select</type>
+			<options>
+				<name xml:lang="ko">하단</name>
+				<value>bottom</value>
+			</options>
+			<options>
+				<name xml:lang="ko">상단</name>
+				<value>top</value>
+			</options>
+			<options>
+				<name xml:lang="ko">좌측</name>
+				<value>left</value>
+			</options>
+			<options>
+				<name xml:lang="ko">우측</name>
+				<value>right</value>
+			</options>
+		</var>
+		<var id="autoplay_delay">
+			<name xml:lang="ko">자동 슬라이드 머무는 시간</name>
+			<type>text</type>
+			<description xml:lang="ko">기본 5000(5초) (숫자만)</description>
+		</var>
+	</group>
+
+	<group>
+	<title xml:lang="ko">Box별 Color설정</title>
+		<var id="bgcol_slide">
+			<name xml:lang="ko">★Box별 배경색</name>
+			<type>select</type>
+			<description xml:lang="ko">슬라이드 박스별로 배경색을 따로 지정</description>
+			<options>
+				<name xml:lang="ko">적용하지 않음</name>
+				<value>N</value>
+			</options>
+			<options>
+				<name xml:lang="ko">적용</name>
+				<value>Y</value>
+			</options>
+		</var>
+		<var id="back_color1">
+			<type>color</type>
+			<name xml:lang="ko">1 바탕 컬러</name>
+			<description xml:lang="ko">1 바탕 컬러입니다.(기본 #5b927d)</description>
+		</var>
+		<var id="back_color2">
+			<type>color</type>
+			<name xml:lang="ko">2 바탕 컬러</name>
+			<description xml:lang="ko">2 바탕 컬러입니다.(기본 #a8ae7e)</description>
+		</var>
+		<var id="back_color3">
+			<type>color</type>
+			<name xml:lang="ko">3 바탕 컬러</name>
+			<description xml:lang="ko">3 바탕 컬러입니다.(기본 #835531)</description>
+		</var>
+		<var id="back_color4">
+			<type>color</type>
+			<name xml:lang="ko">4 바탕 컬러</name>
+			<description xml:lang="ko">4 바탕 컬러입니다.(기본 #9C4998)</description>
+		</var>
+		<var id="back_color5">
+			<type>color</type>
+			<name xml:lang="ko">5 바탕 컬러</name>
+			<description xml:lang="ko">5 바탕 컬러입니다.(기본 #444)</description>
+		</var>
+		<var id="back_color6">
+			<type>color</type>
+			<name xml:lang="ko">6 바탕 컬러</name>
+			<description xml:lang="ko">4 바탕 컬러입니다.(기본 #f3b96c)</description>
+		</var>
+		<var id="more_color1">
+			<name xml:lang="ko">★More 버턴색상 1</name>
+			<type>select</type>
+			<description><![CDATA[
+			<a href="https://moonhouse.co.kr/xemy/395931" target="_blank" style="color:#ff6600">Web Fonts 애드온</a> Sexy Button설치가 필수입니다.]]></description>
+			<options><name>orange</name><value>orange</value></options>
+			<options><name>gray</name><value></value></options>
+			<options><name>blue</name><value>blue</value></options>
+			<options><name>green</name><value>green</value></options>
+			<options><name>purple</name><value>purple</value></options>
+			<options><name>red</name><value>red</value></options>
+			<options><name>yellow</name><value>yellow</value></options>
+			<options><name>dark</name><value>dark</value></options>
+			<options><name>white</name><value>white</value></options>
+		</var>
+		<var id="more_color2">
+			<name xml:lang="ko">More 버턴색상 2</name>
+			<type>select</type>
+			<options><name>blue</name><value>blue</value></options>
+			<options><name>gray</name><value></value></options>
+			<options><name>green</name><value>green</value></options>
+			<options><name>purple</name><value>purple</value></options>
+			<options><name>orange</name><value>orange</value></options>
+			<options><name>red</name><value>red</value></options>
+			<options><name>yellow</name><value>yellow</value></options>
+			<options><name>dark</name><value>dark</value></options>
+			<options><name>white</name><value>white</value></options>
+		</var>
+		<var id="more_color3">
+			<name xml:lang="ko">More 버턴색상 3</name>
+			<type>select</type>
+			<options><name>green</name><value>green</value></options>
+			<options><name>red</name><value>red</value></options>
+			<options><name>blue</name><value>blue</value></options>
+			<options><name>gray</name><value></value></options>
+			<options><name>purple</name><value>purple</value></options>
+			<options><name>orange</name><value>orange</value></options>
+			<options><name>yellow</name><value>yellow</value></options>
+			<options><name>dark</name><value>dark</value></options>
+			<options><name>white</name><value>white</value></options>
+		</var>
+		<var id="more_color4">
+			<name xml:lang="ko">More 버턴색상 4</name>
+			<type>select</type>
+			<options><name>purple</name><value>purple</value></options>
+			<options><name>blue</name><value>blue</value></options>
+			<options><name>gray</name><value></value></options>
+			<options><name>green</name><value>green</value></options>
+			<options><name>orange</name><value>orange</value></options>
+			<options><name>red</name><value>red</value></options>
+			<options><name>yellow</name><value>yellow</value></options>
+			<options><name>dark</name><value>dark</value></options>
+			<options><name>white</name><value>white</value></options>
+		</var>
+		<var id="more_color5">
+			<name xml:lang="ko">More 버턴색상 5</name>
+			<type>select</type>
+			<options><name>yellow</name><value>yellow</value></options>
+			<options><name>green</name><value>green</value></options>
+			<options><name>red</name><value>red</value></options>
+			<options><name>blue</name><value>blue</value></options>
+			<options><name>gray</name><value></value></options>
+			<options><name>purple</name><value>purple</value></options>
+			<options><name>orange</name><value>orange</value></options>
+			<options><name>dark</name><value>dark</value></options>
+			<options><name>white</name><value>white</value></options>
+		</var>
+		<var id="more_color6">
+			<name xml:lang="ko">More 버턴색상 6</name>
+			<type>select</type>
+			<options><name>dark</name><value>dark</value></options>
+			<options><name>purple</name><value>purple</value></options>
+			<options><name>blue</name><value>blue</value></options>
+			<options><name>gray</name><value></value></options>
+			<options><name>green</name><value>green</value></options>
+			<options><name>orange</name><value>orange</value></options>
+			<options><name>red</name><value>red</value></options>
+			<options><name>yellow</name><value>yellow</value></options>
+			<options><name>white</name><value>white</value></options>
+		</var>
+	</group>
+	</extra_vars>
+</widget>

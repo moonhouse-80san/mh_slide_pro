@@ -1,0 +1,77 @@
+<!--@if($wi->bgcol_slide == 'Y')-->
+	<style>
+		.slider-pro .sp-slide:first-of-type { background-color:{$wi->back_color1}}
+		.slider-pro .sp-slide:nth-of-type(2) { background-color:{$wi->back_color2}}
+		.slider-pro .sp-slide:nth-of-type(3) { background-color:{$wi->back_color3}}
+		.slider-pro .sp-slide:nth-of-type(4) { background-color:{$wi->back_color4}}
+		.slider-pro .sp-slide:nth-of-type(5) { background-color:{$wi->back_color5}}
+		.slider-pro .sp-slide:nth-of-type(6) { background-color:{$wi->back_color6}}
+		.slider-pro .sp-slide:nth-of-type(6n+1) { background-color:{$wi->back_color1}}
+		.slider-pro .sp-slide:nth-of-type(6n+2) { background-color:{$wi->back_color2}}
+		.slider-pro .sp-slide:nth-of-type(6n+3) { background-color:{$wi->back_color3}}
+		.slider-pro .sp-slide:nth-of-type(6n+4) { background-color:{$wi->back_color4}}
+		.slider-pro .sp-slide:nth-of-type(6n+5) { background-color:{$wi->back_color5}}
+		.slider-pro .sp-slide:nth-of-type(6n+6) { background-color:{$wi->back_color6}}
+	</style>
+<!--@end-->
+
+<style>
+	.slider-pro .sp-slide { background-color:{$wi->background_color}; }
+	.slider-pro .sp-slide .sp-image { opacity:0.5 }
+	.slider-pro .sp-slide a { font-family:Nanum Pen Script; font-size:{$wi->title_size}; }
+	.slider-pro .sp-slide .spt { font-size:{$wi->sum_font_size}; -webkit-line-clamp:{$wi->content_h_n}; line-height:{$wi->content_l_h}; overflow:hidden;}
+	.slider-pro .tiltview { -webkit-transform-style:preserve-3d; transform-style:preserve-3d; -webkit-transform:translateY({$wi->img_rotateY}%) rotateX({$wi->img_rotateX}deg) rotateZ({$wi->img_rotateZ}deg); transform:translateY({$wi->img_rotateY}%) rotateX({$wi->img_rotateX}deg) rotateZ({$wi->img_rotateZ}deg);}
+	.slider-pro .tiltview { max-width:100%; display:block; margin:0 auto;}
+	.slider-pro .tiltview img { <!--@if($wi->boxshadow == 'Y')-->-moz-box-shadow:1px 3px 15px #555; -webkit-box-shadow:1px 3px 15px #555; box-shadow:1px 3px 15px #555;<!--@end-->}
+	.slider-pro .sp-layer a { text-transform:uppercase; font-style:normal; font-size:12px; text-decoration:none;}
+	.sp-previous-arrow:before,.sp-previous-arrow:after,.sp-next-arrow:before,.sp-next-arrow:after { background-color:{$wi->rla_color};}
+	.sp-bottom-thumbnails.sp-has-pointer .sp-selected-thumbnail:before { border-bottom:5px solid {$wi->tha_color}; }
+	.sp-bottom-thumbnails.sp-has-pointer .sp-selected-thumbnail:after { border-bottom:10px solid {$wi->tha_color}; }
+	.sp-full-screen-button { color:{$wi->fbc}}
+
+	.slider-pro .sp-thumbnail { width:100%; padding:8px; background-color:{$wi->background_color}; -moz-box-sizing:border-box; box-sizing:border-box;}
+	.slider-pro .sp-thumbnail-title { margin-bottom:5px; text-transform:uppercase; color:#333; text-align:center; padding-top:3px}
+	.slider-pro .sp-thumbnail-description { font-size:14px; color:#333;}
+	.slider-pro .sp-thumbnail-text { text-overflow:ellipsis; white-space:nowrap; word-wrap:normal; overflow:hidden; }
+	.slider-pro .sp-thumbnail-image { padding-bottom:7px }
+	.slider-pro .tiltview a { outline:1px solid transparent;}
+	.slider-pro .tiltview a,.tiltview a img { max-width:100%; display:block; margin:0 auto;}
+	.slider-pro .tiltview a:first-child { margin-bottom:30px;}
+</style>
+
+<script>
+	jQuery(document).ready(function($){
+		var $slider = $( '#slider-pro' ).sliderPro({
+			width: {$wi->box_width},
+			height: {$wi->main_height},
+			fade: {$wi->fade},
+			fullScreen: {$wi->fullscreen},
+			slideDistance: 0,
+			slideAnimationDuration: 1000,
+			autoplayDelay: {$wi->autoplay_delay},
+			thumbnailsPosition: '{$wi->th_location}',
+			arrows: {$wi->arrows},
+			buttons: {$wi->buttons},
+			waitForLayers: true,
+			thumbnailWidth: {$wi->box_width/6-3},
+			thumbnailHeight: <!--@if($wi->th == 'true')--><!--@if($wi->ti =='true')-->140<!--@else-->50<!--@end--><!--@else-->0<!--@end-->,
+			thumbnailPointer: true,
+			autoplay: {$wi->autoplay},
+			autoScaleLayers: false,
+			imageScaleMode : '{$wi->imageScaleMode}',
+			forceSize : '{$wi->forceSize}',
+			autoHeight: {$wi->autoheight},
+			autoSlideSize: false,
+			shuffle: {$wi->shuffling},
+			breakpoints: {
+				500: {
+					width: 300,
+					height: 250,
+					buttons: true,
+					thumbnailWidth: 120,
+					thumbnailHeight: 15
+				}
+			}
+		});
+	});
+</script>

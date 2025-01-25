@@ -1,0 +1,51 @@
+{@ $wi = $widget_info; }
+<load target="css/slider-pro.css" />
+<load target="js/jquery.sliderPro.min.js" />
+
+<div id="slider-pro" class="slider-pro">
+	<div class="sp-slides">
+	<div class="sp-thumbnails">
+
+		{@$box_num=0}
+		<!--@foreach($widget_info->document_list as$oDocument)-->
+			{@$box_num++}
+			<div class="sp-slide">
+				<img class="sp-image" src="{$tpl_path}img/blank.gif" data-src="{$wi->b_img}"/>
+
+				<p cond="$wi->title_visibility == 'true'" class="sp-layer sp-<!--@if($box_num % 2)-->white<!--@else-->black<!--@end--> sp-padding"
+					data-horizontal="5%" data-vertical="10%"
+					data-show-transition="right" data-hide-transition="up" data-show-delay="400" data-hide-delay="200">
+					<a href="{getUrl('','document_srl',$oDocument->document_srl)}" class="sp-title">{$oDocument->getTitleText($wi->title_length)}</a>
+				</p>
+
+				<p cond="$wi->display_summary == 'Y'" class="spt sp-layer sp-<!--@if($box_num % 2)-->black<!--@else-->white<!--@end--> sp-padding hide-medium-screen" 
+					data-horizontal="5%" data-vertical="25%" data-width="{$wi->box_width/2}" data-height="{$wi->content_l_h*$wi->content_h_n+0.7}em" 
+					data-show-transition="left" data-hide-transition="down" data-show-delay="400" data-hide-delay="200" data-depth="1">
+					{$oDocument->getSummary($wi->content_cut_size)}
+				</p>
+
+				<p class="sp-layer" data-position="bottomLeft" data-horizontal="5%" data-vertical="10%" data-show-transition="up" data-show-delay="500" data-hide-transition="down">
+					<a href="{getUrl('','document_srl',$oDocument->document_srl)}" class="sbtn_small sbtn-<!--@if($box_num % 6 == 1)-->{$wi->more_color1}<!--@elseif($box_num % 6 == 2)-->{$wi->more_color2}<!--@elseif($box_num % 6 == 3)-->{$wi->more_color3}<!--@elseif($box_num % 6 == 4)-->{$wi->more_color4}<!--@elseif($box_num % 6 == 5)-->{$wi->more_color5}<!--@else-->{$wi->more_color6}<!--@end-->"><i class="fas fa-link"></i> More &rarr;</a>
+				</p>
+
+				<div class="sp-layer" data-horizontal="50%" data-vertical="50%" data-width="{$wi->box_width/2}"
+					data-show-transition="left" data-hide-transition="up" data-show-delay="800" data-hide-delay="400">
+					<div class="tiltview col">
+						<a href="{getUrl('','document_srl',$oDocument->document_srl)}"><img src="{$oDocument->getThumbnail($wi->thumbnail_width,$wi->thumbnail_height,$wi->thumbnail_type)}"/></a>
+					</div>
+				</div>
+			</div>
+
+			<div class="sp-thumbnail">
+				<div cond="$wi->th =='true'" class="sp-thumbnail-title">
+					<img cond="$wi->ti =='true'" class="sp-thumbnail-image pr_tooltip" pr_color="dark" pr_position="right" title="{$oDocument->getTitleText($wi->title_length)}" src="{$oDocument->getThumbnail($wi->thumbnail_width,$wi->thumbnail_height,$wi->thumbnail_type)}" width="{$wi->box_width/6-20}" height="100" />
+					<p class="sp-thumbnail-text" style="font-family:Nanum Pen Script; font-size:1.2em">{$oDocument->getTitleText(20)}</p>
+				</div>
+			</div>
+		<!--@end-->
+
+	</div>
+	</div>
+</div>
+
+<include target="style.html" />
