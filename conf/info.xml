@@ -2,8 +2,8 @@
 <widget version="0.2">
 	<title xml:lang="ko">Mh Slide Pro</title>
 	<description xml:lang="ko">Slide Pro Slideshow 위젯</description>
-	<version>1.0</version>
-	<date>2020-01-14</date>
+	<version>2.0</version>
+	<date>2025-02-04</date>
 
 	<author email_address="mbg1346@naver.com" link="https://moonhouse.co.kr">
 		<name xml:lang="ko">문하우스</name>
@@ -64,14 +64,14 @@
 		<var id="thumbnail_type">
 			<type>select</type>
 			<name xml:lang="ko">★썸네일 생성 방법</name>
-			<description xml:lang="ko">썸네일 생성 방법을 선택할 수 있습니다.(기본 ratio) (fill : 꽉 채우기, ratio : 비율 맞추기)</description>
+			<description xml:lang="ko">썸네일 생성 방법을 선택할 수 있습니다.(기본 ratio) (crop : 꽉 채우기, ratio : 비율 맞추기)</description>
 			<options>
 				<value>ratio</value>
 				<name xml:lang="ko">Ratio (비율 맞추기)</name>
 			</options>
 			<options>
-				<value>fill</value>
-				<name xml:lang="ko">fill (채우기)</name>
+				<value>crop</value>
+				<name xml:lang="ko">Crop (채우기)</name>
 			</options>
 		</var>
 		<var id="thumbnail_width">
@@ -160,7 +160,7 @@
 		<var id="title_size">
 			<type>text</type>
 			<name xml:lang="ko">　┖ 제목 크기</name>
-			<description xml:lang="ko">제목글자의 크기를 설정합니다. (기본값: 18px, css 형식의 사이즈 모두 OK)</description>
+			<description xml:lang="ko">제목글자의 크기를 설정합니다. (기본값: 1.1em, css 형식의 사이즈 모두 OK)</description>
 		</var>
 		<var id="title_color">
 			<type>color</type>

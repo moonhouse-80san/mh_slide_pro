@@ -6,7 +6,7 @@
 */
 /* Core
 --------------------------------------------------*/
-.slider-pro { position:relative; margin:0 auto; -moz-box-sizing:content-box; box-sizing:content-box;}
+.slider-pro { position:relative; margin:10px auto 0; -moz-box-sizing:content-box; box-sizing:content-box;}
 .sp-slides-container { position:relative;}
 .sp-mask { position:relative; overflow:hidden;}
 .sp-slides { position:relative; -webkit-backface-visibility:hidden; -webkit-perspective:1000;}
@@ -69,7 +69,7 @@
 .sp-black a { color:#FFF; }
 .sp-white a { color:#000; }
 .sp-rounded { border-radius:10px;}
-.sp-padding { padding:10px;}
+.sp-padding { padding:5px 10px;}
 
 /* Touch Swipe--------------------------------------------------*/
 .sp-grab { cursor:url(../img/openhand.cur), move;}

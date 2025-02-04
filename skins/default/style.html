@@ -18,12 +18,12 @@
 <style>
 	.slider-pro .sp-slide { background-color:{$wi->background_color}; }
 	.slider-pro .sp-slide .sp-image { opacity:0.5 }
-	.slider-pro .sp-slide a { font-family:Nanum Pen Script; font-size:{$wi->title_size}; }
-	.slider-pro .sp-slide .spt { font-size:{$wi->sum_font_size}; -webkit-line-clamp:{$wi->content_h_n}; line-height:{$wi->content_l_h}; overflow:hidden;}
+	.slider-pro .sp-slide .sp-title { font-size:{$wi->title_size}; }
+	.slider-pro .sp-slide .spt { font-size:{$wi->sum_font_size}; line-height:{$wi->content_l_h}; word-break:break-all; overflow:hidden; text-overflow:ellipsis; -webkit-line-clamp:{$wi->content_h_n}; display:-webkit-box; -webkit-box-orient:vertica; }
 	.slider-pro .tiltview { -webkit-transform-style:preserve-3d; transform-style:preserve-3d; -webkit-transform:translateY({$wi->img_rotateY}%) rotateX({$wi->img_rotateX}deg) rotateZ({$wi->img_rotateZ}deg); transform:translateY({$wi->img_rotateY}%) rotateX({$wi->img_rotateX}deg) rotateZ({$wi->img_rotateZ}deg);}
 	.slider-pro .tiltview { max-width:100%; display:block; margin:0 auto;}
 	.slider-pro .tiltview img { <!--@if($wi->boxshadow == 'Y')-->-moz-box-shadow:1px 3px 15px #555; -webkit-box-shadow:1px 3px 15px #555; box-shadow:1px 3px 15px #555;<!--@end-->}
-	.slider-pro .sp-layer a { text-transform:uppercase; font-style:normal; font-size:12px; text-decoration:none;}
+	.sp-layer a {text-transform:uppercase; font-style:normal; font-size:11px; text-decoration:none;}
 	.sp-previous-arrow:before,.sp-previous-arrow:after,.sp-next-arrow:before,.sp-next-arrow:after { background-color:{$wi->rla_color};}
 	.sp-bottom-thumbnails.sp-has-pointer .sp-selected-thumbnail:before { border-bottom:5px solid {$wi->tha_color}; }
 	.sp-bottom-thumbnails.sp-has-pointer .sp-selected-thumbnail:after { border-bottom:10px solid {$wi->tha_color}; }
@@ -54,7 +54,7 @@
 			buttons: {$wi->buttons},
 			waitForLayers: true,
 			thumbnailWidth: {$wi->box_width/6-3},
-			thumbnailHeight: <!--@if($wi->th == 'true')--><!--@if($wi->ti =='true')-->140<!--@else-->50<!--@end--><!--@else-->0<!--@end-->,
+			thumbnailHeight: <!--@if($wi->th == 'true')--><!--@if($wi->ti =='true')-->160<!--@else-->70<!--@end--><!--@else-->0<!--@end-->,
 			thumbnailPointer: true,
 			autoplay: {$wi->autoplay},
 			autoScaleLayers: false,
