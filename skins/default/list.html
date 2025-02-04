@@ -19,7 +19,7 @@
 				</p>
 
 				<a href="{getUrl('','document_srl',$oDocument->document_srl)}">
-					<p cond="$wi->display_summary == 'Y'" class="spt sp-layer sp-<!--@if($box_num % 2)-->black<!--@else-->white<!--@end--> sp-padding hide-medium-screen" data-horizontal="5%" data-vertical="25%" data-width="{$wi->box_width/2}" data-height="{$wi->content_l_h*$wi->content_h_n+0.6}em" data-show-transition="left" data-hide-transition="down" data-show-delay="400" data-hide-delay="200" data-depth="1">
+					<p cond="$wi->display_summary == 'Y'" class="spt sp-layer sp-<!--@if($box_num % 2)-->black<!--@else-->white<!--@end--> sp-padding hide-medium-screen" data-horizontal="5%" data-vertical="25%" <!--@if(!Mobile::isMobileCheckByAgent())-->data-width="{$wi->box_width/2}"<!--@else-->data-width="{$wi->box_width/4}"<!--@end--> data-height="{$wi->content_l_h*$wi->content_h_n+0.6}em" data-show-transition="left" data-hide-transition="down" data-show-delay="400" data-hide-delay="200" data-depth="1">
 					{$oDocument->getSummary($wi->content_cut_size)}</p>
 				</a>
 
