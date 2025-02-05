@@ -23,7 +23,7 @@
 					{$oDocument->getSummary($wi->content_cut_size)}</p>
 				</a>
 
-				<p class="sp-layer" data-position="bottomLeft" data-horizontal="5%" data-vertical="10%" data-show-transition="up" data-show-delay="500" data-hide-transition="down">
+				<p class="sp-layer more" data-position="bottomLeft" data-horizontal="5%" data-vertical="10%" data-show-transition="up" data-show-delay="500" data-hide-transition="down">
 					<a href="{getUrl('','document_srl',$oDocument->document_srl)}" class="sbtn_small sbtn-<!--@if($box_num % 6 == 1)-->{$wi->more_color1}<!--@elseif($box_num % 6 == 2)-->{$wi->more_color2}<!--@elseif($box_num % 6 == 3)-->{$wi->more_color3}<!--@elseif($box_num % 6 == 4)-->{$wi->more_color4}<!--@elseif($box_num % 6 == 5)-->{$wi->more_color5}<!--@else-->{$wi->more_color6}<!--@end-->"><i class="fas fa-link"></i> More &rarr;</a>
 				</p>
 
